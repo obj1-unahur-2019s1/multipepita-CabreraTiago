@@ -1,10 +1,21 @@
 import pepita.pepita
 import comidas.mondongo
 import comidas.alpiste
+import comidas.mijo
 
-test "pepita come alpiste y mondongo" {
+test "Pepita come alpiste y mondongo" {
 	pepita.comer(alpiste, 100)
 	assert.equals(400, pepita.energia())
 	pepita.comer(mondongo, 50)
 	assert.equals(5400, pepita.energia())
 }
+
+test "Pepita come mijo" {
+	pepita.energia()
+	assert.equals(0, pepita.energia())
+	mijo.mojarse()
+	assert.equals(15, mijo.energiaPorGramo())
+	
+}
+
+// Hacer todos los tests
