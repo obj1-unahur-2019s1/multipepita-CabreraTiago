@@ -59,20 +59,6 @@ object sorgo {
  */
 object mijo {
 	
-//	var joules = 0
-//	
-//	method mojarse() {
-//		joules = 15
-//	}
-//	
-//	method secarse() {
-//		joules = 20
-//	}
-//	
-//	method energiaPorGramo() {
-//		return joules
-//	}
-
 	var estaMojado = false;
 	
 	method mojarse() {
@@ -94,26 +80,34 @@ object mijo {
 
 object canelones {
 	
-	var joules = 20
+	var tieneSalsa = false
+	var tieneQueso = false
 	
 	method agregarSalsa() {
-		joules += 5
+		tieneSalsa = true
 	}
 	
 	method sacarSalsa() {
-		joules -= 5
+		tieneSalsa = false
 	}
 
 	method agregarQueso() {
-		joules += 7
+		tieneQueso = true
 	}
 	
 	method sacarQueso() {
-		joules -= 7
+		tieneQueso = false
 	}
 		
 	method energiaPorGramo() {
-		return joules
+		if (tieneSalsa and tieneQueso) {
+			return 32
+		} else if (tieneSalsa) {
+			return 25
+		} else if (tieneQueso) {
+			return 27
+		}
+		return 20
 	}
 	
 }

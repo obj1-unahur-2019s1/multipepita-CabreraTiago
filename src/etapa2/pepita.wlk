@@ -19,13 +19,11 @@ object pepita {
 		energia -= kms + 10
 	}
 	
-	// Métodos nuevos
 	method estaDebil() {
 		return energia < 50
 	} 
 
 	method estaFeliz() {
-//		return energia >= 500 && energia <= 1000;
 		return energia.between(500, 1000)
 	}
 	
@@ -40,7 +38,6 @@ object pepita {
 		return cuanto
 	}
 	
-	// "self" es una referencia al objeto que recibe el mensaje
 	method salirAComer() {
 		self.volar(5)
 		self.comer(alpiste, 80);
@@ -48,10 +45,11 @@ object pepita {
 	}
 		
 	
-	method haceLoQueQuieras() { 
+	method haceLoQueQuieras() {
 		if (self.estaDebil()) {
 			self.comer(alpiste, 20)
-		} else if (self.estaFeliz()) {
+		}
+		if (self.estaFeliz()) {
 			self.volar(8)
 		}
 	}
